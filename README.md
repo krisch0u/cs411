@@ -5,6 +5,7 @@ Idea 1: Speed dating app that scans accounts around the area and gives the user'
 Data Sets via API:
 Yelp for restaurant ratings
 Barzz API https://www.programmableweb.com/api/barzz
+Tinder API
 Check in to show location if user wants toWays of utilizing a database:
 User preferences
 User location/area
