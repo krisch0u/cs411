@@ -18,6 +18,6 @@ User location/area
 User preferences
 Data Sets via API from the Internet: 
 Yelp for rating/location
-Openseat for seats
+OpenTable for seats
 Third Party authentication: Google account 
 
