@@ -13,14 +13,10 @@ var requestobj = {
 }
 $.ajax(requestobj)
 .done(function(response) {
-    //make it so its sorted by rating
-    var sorted = response.businesses.sort(function(a, b) {
+    var list = response.businesses
+    // sort list by rating
+    list.sort(function(a, b) {
         return b.rating - a.rating
     })
-    //sort it alphabetically
-    var sorteds = sorted.sort(function(a, b) {
-        return a.name.localeCompare(b.name)
-
-    })
-    console.log(sorteds)
+    console.log(list)
 })
