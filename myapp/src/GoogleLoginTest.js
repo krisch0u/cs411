@@ -4,11 +4,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
-import { gapi } from 'gapi-script';
+import { gapi } from 'gapi-script';  // gapi is googles client library for browser side (easily connect with google APIs)
 
 function App() {
     const [ profile, setProfile ] = useState([]);
     const clientId = '702936861389-ucpld9epkk6qnsqdhjbndavqmiu7ore7.apps.googleusercontent.com';  //OAuth Client ID from Google 
+    // useEffect will initialize a client using gapi 
     useEffect(() => {
         const initClient = () => {
             gapi.client.init({
@@ -31,6 +32,7 @@ function App() {
         setProfile(null);
     };
 
+    // the following can be created from taking the logged in users Google account information
     return (
         <div>
             <h2>Google Login</h2>
