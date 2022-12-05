@@ -1,3 +1,7 @@
+// must install packages in terminal with command: npm install react-google-login gapi-script
+
+//if this works can be moved into App.js file
+
 import React, { useState, useEffect } from 'react';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import { gapi } from 'gapi-script';
