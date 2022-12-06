@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { gapi } from 'gapi-script';
 import {GoogleLogin, GoogleLogout} from 'react-google-login';
+// reminder to install in terminal using command: npm install react-google-login gapi-script
 
 function App() {
   const [ profile, setProfile ] = useState([]);
@@ -14,7 +15,6 @@ function App() {
         };
         gapi.load('client:auth2', initClient);
     });
-
     const onSuccess = (res) => {
         setProfile(res.profileObj);
     };
@@ -28,6 +28,8 @@ function App() {
     };
   return (
     <div>
+        <h2>Foodies</h2>
+            <br />
             <br />
             {profile ? (
                 <div>
