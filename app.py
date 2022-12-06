@@ -11,44 +11,32 @@ Parameters = {'term': 'restaurant', 'location': user_location}
 response = requests.get(url = Endpoint, params = Parameters, headers = Headers)
 business_data = response.json()
 food = nix.search(menu_item).json()
-#business_data['businesses'].sort(key=lambda x: x['rating'], reverse=True)
+food_id = []
+for i in range(len(food['hits'])):
+    food_id.append(food['hits'][i]['fields']['item_id'])
+
+food_final = []
+for i in range(len(food_id)):
+    food_final.append(nix.item(id=food_id[i]).json())
+
 with open('res.json', 'w') as outfile:
+    for i in business_data['businesses']:
+        if i['is_closed'] == True:
+            business_data['businesses'].remove(i)
     json.dump(business_data, outfile)
+  
     outfile.close()
 
 with open('food.json', 'w') as outfile:
-    json.dump(food, outfile)
+    json.dump(food_final, outfile)
+  
     outfile.close()
 
-#read and find restaurants from the same city as the user
-with open('res.json', 'r') as infile:
-    data = json.load(infile)
-    for i in data['businesses']:
-        if i['location']['city'] == user_location:
-            print(i['name'], i['rating'])
 
-    infile.close()
-
-#read and find food from the same city as the user
-with open('food.json', 'r') as infile:
-    data = json.load(infile)
-    for i in data['hits']:
-        print(i['fields']['item_name'])
-
-    infile.close()
+#open food.json file and print name of food
         
-#find restaurant in the same city as the user with the highest rating and put into a list
 with open('res.json', 'r') as infile:
     data = json.load(infile)
     data['businesses'].sort(key=lambda x: x['rating'], reverse=True)
-    for i in data['businesses']:
-        if i['location']['city'] == user_location and i['is_closed'] == False:
-            print(i['name'], i['rating'])
-            print(i['location']['address1'])
-            print(i['phone'])
-            print(i['url'])
-            print(i['categories'][0]['title'])
-            print(i['review_count'])
-            print(i['transactions'])
-
-            infile.close()
+  
+    infile.close()
