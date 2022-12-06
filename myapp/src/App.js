@@ -1,22 +1,54 @@
-import React from 'react';
-import './App.css';
-import City from './Components/City.js';
-import Login from './Components/Login.js';
-import Logout from './Components/Logout.js';
-//import useBusinessSearch from './hooks/useBusinessSearch';
+import React, {useState, useEffect} from 'react';
+import { gapi } from 'gapi-script';
+import {GoogleLogin, GoogleLogout} from 'react-google-login';
 
 function App() {
-  //const [items,setItems] = useState(null);
-  // const [loading,setLoading] = useState(true);
-  // const[error,setError] = useState(null);
+  const [ profile, setProfile ] = useState([]);
+    const clientId = '920757342306-retlhm1jpfe3j3q00uj5l6l2lqokps15.apps.googleusercontent.com';
+    useEffect(() => {
+        const initClient = () => {
+            gapi.client.init({
+                clientId: clientId,
+                scope: ''
+            });
+        };
+        gapi.load('client:auth2', initClient);
+    });
+
+    const onSuccess = (res) => {
+        setProfile(res.profileObj);
+    };
+
+    const onFailure = (err) => {
+        console.log('failed', err);
+    };
+
+    const logOut = () => {
+        setProfile(null);
+    };
   return (
     <div>
-      <Login/>
-      <br/>
-      <Logout/>
-      <br/>
-      <City></City>
-    </div>
+            <br />
+            {profile ? (
+                <div>
+                    <h3>User Logged in</h3>
+                    <p>Name: {profile.name}</p>
+                    <p>Email Address: {profile.email}</p>
+                    <br />
+                    <br />
+                    <GoogleLogout clientId={clientId} buttonText="Log out" onLogoutSuccess={logOut} />
+                </div>
+            ) : (
+                <GoogleLogin
+                    clientId={clientId}
+                    buttonText="Sign in with Google"
+                    onSuccess={onSuccess}
+                    onFailure={onFailure}
+                    cookiePolicy={'single_host_origin'}
+                    isSignedIn={true}
+                />
+            )}
+        </div>
   );
 }
 
