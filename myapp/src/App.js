@@ -3,8 +3,11 @@ import Login from './Components/Login';
 import { API_BASE_URL, BEARER_TOKEN } from './hooks/config';
 import axios from 'axios';
 import "./App.css";
+import logo from './logo.jpeg'
 
-// reminder to install in terminal using command: npm install react-google-login gapi-script
+// reminder to install in terminal using command: 
+// npm install react-google-login gapi-script
+// npm install axios
 
 function App () {
   const [places, setPlaces]=useState([]);
@@ -80,8 +83,9 @@ useEffect(() => {
         </p>
       ))}
       <br />
+      <img src={logo} className="logo" />
     </div>
-      
+            
   );
 }
 
