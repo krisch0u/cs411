@@ -5,4 +5,4 @@ export const API_BASE_URL = 'https://cors-anywhere.herokuapp.com/https://api.yel
 // The Baerer token must be used on a server whose inner workings are not exposed to the outside world
 // For simplicity and the sake of this tutorial, I'll just leave it here like this
 // But just bear in mind: NEVER EVER save a bearer token inside the frontend code
-export const BEARER_TOKEN = 'Bearer rUPP9uIzQKJ2rtr6S8Yf_rPsg6D4LjGMRDw8iutdvO88U9vBvANjV6aJSVI_PJoq-B2wZbGi6hyfjgcS56ZCYk0vCtQZl-uldCAdcyidUTcm-4inffjhvUeT2ZmLY3Yx';
+export const BEARER_TOKEN = 'Bearer x1zvADUZu1ycCLb4BH3VmGzU9mcpXjnnI4oir4AxIaDspMugJB8Eq8fsRhAeEggZYfjUuX7AyHNf6lkxSLG6ftapXmUqi_txLtWOhJTOlZvc7G_eHozlB_NjmhiRY3Yx'
