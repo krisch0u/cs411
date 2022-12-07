@@ -83,7 +83,7 @@ useEffect(() => {
         </p>
       ))}
       <br />
-      <img src={logo} className="logo" />
+      <img src={logo} alt="" className="logo" />
     </div>
             
   );
