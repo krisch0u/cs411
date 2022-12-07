@@ -33,10 +33,32 @@ with open('food.json', 'w') as outfile:
     outfile.close()
 
 
-#open food.json file and print name of food
+#open food.json file and get the food attributes
+dish_attributes = []
+with open('food.json') as json_file:
+    data_food = json.load(json_file)
+    for i in range(len(data_food)):
+        dish_attributes.append(data_food[i]['nf_calories'], 
+        data_food[i]['nf_total_fat'], 
+        data_food[i]['nf_saturated_fat'], 
+        data_food[i]['nf_cholesterol'], 
+        data_food[i]['nf_sodium'], 
+        data_food[i]['nf_total_carbohydrate'], 
+        data_food[i]['nf_dietary_fiber'], 
+        data_food[i]['nf_sugars'], 
+        data_food[i]['nf_protein'], 
+        data_food[i]['nf_potassium'], 
+        data_food[i]['nf_p'], 
+        data_food[i]['nf_vitamin_a_dv'], 
+        data_food[i]['nf_vitamin_c_dv'], 
+        data_food[i]['nf_calcium_dv'], 
+        data_food[i]['nf_iron_dv'])
         
 with open('res.json', 'r') as infile:
-    data = json.load(infile)
-    data['businesses'].sort(key=lambda x: x['rating'], reverse=True)
+    data_res = json.load(infile)
+    data_res['businesses'].sort(key=lambda x: x['rating'], reverse=True)
   
     infile.close()
+
+print(data_res)
+print(data_attributes)
