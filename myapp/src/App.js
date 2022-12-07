@@ -3,6 +3,7 @@ import { gapi } from 'gapi-script';
 import {GoogleLogin, GoogleLogout} from 'react-google-login';
 // import { BEARER_TOKEN } from './hooks/config';
 // import axios from 'axios';
+// reminder to install in terminal using command: npm install react-google-login gapi-script
 
 function App() {
   const [ profile, setProfile ] = useState([]);
@@ -60,7 +61,6 @@ function App() {
         };
         gapi.load('client:auth2', initClient);
     });
-
     const onSuccess = (res) => {
         setProfile(res.profileObj);
     };
@@ -74,35 +74,27 @@ function App() {
     };
   return (
     <div>
-       <br />
-        {profile ? (
-          <div>
-            <h3>User Logged in</h3>
-            <p>Name: {profile.name}</p>
-            <p>Email Address: {profile.email}</p>
             <br />
-            <input
-            ref={inputRef}
-            type="text"
-            id="City"
-            name="City"
-            placeholder='Ex. Boston'
-          />
-          <button onClick={handleClick}>Enter</button>
-            <br />
-            <GoogleLogout clientId={clientId} buttonText="Log out" onLogoutSuccess={logOut} />
-          </div>
-          ) : (
-            <GoogleLogin
-              clientId={clientId}
-              buttonText="Sign in with Google"
-              onSuccess={onSuccess}
-              onFailure={onFailure}
-              cookiePolicy={'single_host_origin'}
-              isSignedIn={true}
-            />
-          )}
-    </div>
+            {profile ? (
+                <div>
+                    <h3>User Logged in</h3>
+                    <p>Name: {profile.name}</p>
+                    <p>Email Address: {profile.email}</p>
+                    <br />
+                    <br />
+                    <GoogleLogout clientId={clientId} buttonText="Log out" onLogoutSuccess={logOut} />
+                </div>
+            ) : (
+                <GoogleLogin
+                    clientId={clientId}
+                    buttonText="Sign in with Google"
+                    onSuccess={onSuccess}
+                    onFailure={onFailure}
+                    cookiePolicy={'single_host_origin'}
+                    isSignedIn={true}
+                />
+            )}
+        </div>
   );
 }
 
