@@ -1,6 +1,10 @@
 .App {
   text-align: center;
   margin-top: 20px;
+  font-family: Arial;
+  background-color: #82dcc8;
+  color:rgb(16, 8, 64);
+  padding: 40px;
 }
 
 /* Hooks button */
@@ -33,4 +37,9 @@
   position: absolute;
   left: 30px;
   align-items: center;
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
 }

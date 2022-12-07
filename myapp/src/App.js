@@ -3,8 +3,11 @@ import { gapi } from 'gapi-script';
 import {GoogleLogin, GoogleLogout} from 'react-google-login';
 import { API_BASE_URL, BEARER_TOKEN } from './hooks/config';
 import axios from 'axios';
+import logo from './logo.jpeg'
 
-// reminder to install in terminal using command: npm install react-google-login gapi-script
+// reminder to install in terminal using command: 
+// npm install react-google-login gapi-script
+// npm install axios
 
 function App () {
   const [ profile, setProfile ] = useState([]);
@@ -123,6 +126,7 @@ function App () {
                     isSignedIn={true}
                 />
             )}
+            <img src={logo} className="logo" />
         </div>
   );
 }
