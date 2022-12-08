@@ -24,6 +24,7 @@ function Login (){
 
   const onFailure = (err) => {
       console.log('failed', err);
+      window.value =false;
   };
 
   const logOut = () => {
@@ -43,11 +44,13 @@ function Login (){
           cookiePolicy={'single_host_origin'}
           isSignedIn={true} 
         />
+        <GoogleLogout clientId={clientId} buttonText="Log out" onLogoutSuccess={logOut} />
       </div>
       
+      
   ) : (
-    
     <GoogleLogout clientId={clientId} buttonText="Log out" onLogoutSuccess={logOut} />
+    
 
   )}
   {window.value && <div className= 'LoggedInSucess'>

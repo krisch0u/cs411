@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
   margin-top: 20px;
@@ -6,7 +7,6 @@
   color:rgb(16, 8, 64);
   padding: 40px;
 }
-
 /* Hooks button */
 .button {
   cursor: pointer;
@@ -26,15 +26,23 @@
   box-shadow: 0px 16px 60px rgba(78, 79, 114, 0.08);
   position: relative;
 }
-
 .heading {
   color: azure;
   font-weight: bold;
   font-size: x-large;
   font-family: Georgia, serif;
 }
-
 .logo {
   width: 150px;
   height: 150px;
+}
+.restaurantImages{
+  width: 300px;
+  height: 300px;
+}
+.restaurantNames{
+  font-family: Georgia, serif;
+  text-align: center;
+  color: rbg(16,8,64);
+  font-size: medium;
 }
