@@ -60,5 +60,3 @@ with open('res.json', 'r') as infile:
   
     infile.close()
 
-print(data_res)
-print(data_attributes)
