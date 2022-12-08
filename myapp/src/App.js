@@ -78,7 +78,7 @@ useEffect(() => {
   fetchNearbyPlacesWithYelp(); 
 });
 useEffect(() => {
-  fetchNutriutionInfo; 
+  fetchNutriutionInfo(); 
 });
 
   const handleClick = () => {
