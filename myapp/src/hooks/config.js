@@ -1,5 +1,6 @@
 
 export const API_BASE_URL = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search';
+export const API_BASE_URL2 = 'https://cors-anywhere.herokuapp.com/https://nutritionix-api.p.rapidapi.com/v1_1/search';
 // remove this token
 // NOTE: as long as this token is saved in the frontend, the application is not production ready.
 // The Baerer token must be used on a server whose inner workings are not exposed to the outside world

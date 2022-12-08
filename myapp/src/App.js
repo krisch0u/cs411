@@ -1,9 +1,9 @@
 import React, {useState, useRef,useEffect } from 'react';
 import Login from './Components/Login';
-import { API_BASE_URL, BEARER_TOKEN } from './hooks/config';
+import { API_BASE_URL, API_BASE_URL2, BEARER_TOKEN} from './hooks/config';
 import axios from 'axios';
 import "./App.css";
-import logo from './logo.jpeg'
+import logo from './logo.png'
 
 // reminder to install in terminal using command: 
 // npm install react-google-login gapi-script
@@ -11,11 +11,12 @@ import logo from './logo.jpeg'
 
 function App () {
   const [places, setPlaces]=useState([]);
-  //const [result, setResult] = useState('');
-  //const [restaurants, setRestaurants] = useState([]);
   const [location, setLocation] = useState('');
+  const [foodItem, setNutrients]=useState([]);
+  const [meal, setMeal] = useState('');
   const inputRef = useRef(null);
 
+  // YELP API
   const config = {
     headers: {
       Authorization: BEARER_TOKEN
@@ -43,32 +44,59 @@ function App () {
     console.log(error);
   });
 };
-// const fetchProducts = async () => {
-//   const { data } = await axios
-//   .get(API_BASE_URL, config);
-//   const places = data;
-//   setPlaces(
-//     places.businesses.map(x=>({
-//       name: x.name,
-//       image_url: x.image_url,
-//     })),
-//   );
-//   alert(places);
-//   console.log(places);
-// };
+
+// NUTRITIONIX API
+const config2 = {
+  headers: {
+    'X-RapidAPI-Key': 'a6e6cb8997mshc9cc50ae76e2c3ap1c0685jsn889611677324',
+    'X-RapidAPI-Host': 'nutritionix-api.p.rapidapi.com'
+  },
+  params: {
+    fields: 'item_name,item_id,brand_name,nf_calories,nf_total_fat',
+    phrase: meal
+  }
+}
+const fetchNutriutionInfo = async () => {
+  return axios
+  .get(API_BASE_URL2, config2)
+  .then(foodItem => {
+    // Get the nutrition info
+    setNutrients(
+      foodItem.data.search.map(x => ({
+        food: x.food
+      }))
+    );
+  })
+  .catch(error => {
+    alert(error);
+    console.log(error);
+  });
+}
+
 
 useEffect(() => {
-  fetchNearbyPlacesWithYelp();
+  fetchNearbyPlacesWithYelp(); 
+});
+useEffect(() => {
+  fetchNutriutionInfo; 
 });
 
   const handleClick = () => {
     setLocation(inputRef.current.value);
     fetchNearbyPlacesWithYelp();
   }
+  const handleClick2 = () => {
+    setMeal(inputRef.current.value);
+    fetchNutriutionInfo();
+  }
 
   return (
-    <div>
+    <div className='App'>
+      <div className='heading'>
+      <h1>Restaurants and Wellness App</h1>
+      </div>
       <Login/>
+      <h2>Enter Your City</h2>
       <input 
             ref={inputRef}
             type="text"
@@ -76,12 +104,30 @@ useEffect(() => {
             name="city"
             placeholder='Ex. Boston'
           />
-      <button onClick={handleClick}>Enter</button>
-      {places.map((x,index) => (
-        <p key={index}>{x.name}
-          <img src={x.image_url} alt=""></img>
-        </p>
-      ))}
+      <div className='button'>
+        <button onClick={handleClick}>Enter</button>
+        {places.map((x,index) => (
+          <p key={index}>{x.name}
+            <img src={x.image_url} alt=""></img>
+         </p>
+        ))}
+      </div>
+      <h2>Enter Your Meal</h2>
+      <input 
+            ref={inputRef}
+            type="text"
+            id="foodItem"
+            name="foodItem"
+            placeholder='Ex. Pizza'
+          />
+      <div className='button'>
+        <button onClick={handleClick2}>Enter</button>
+        {foodItem.map((x,index) => (
+         <p key={index}>{x.food}
+         </p>
+       ))}
+      </div> 
+
       <br />
       <img src={logo} alt="" className="logo" />
     </div>

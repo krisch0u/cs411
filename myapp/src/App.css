@@ -1,8 +1,8 @@
 .App {
   text-align: center;
   margin-top: 20px;
-  font-family: Arial;
-  background-color: #82dcc8;
+  font-family: Georgia, serif;
+  background-color: #61a8d7;
   color:rgb(16, 8, 64);
   padding: 40px;
 }
@@ -15,31 +15,26 @@
   font-family: Georgia, serif;
   box-sizing: content-box;
   margin: 20px auto 0px;
-  width: 70%;
+  width: 7%;
   padding: 15px 20px;
   border-radius: 24px;
   border-color: transparent;
-  background-color: rgb(93, 171, 231);
+  background-color: rgb(172, 205, 239);
+  color: #000001;
+  font-weight: bolder;
   /* box-shadow: 0px 16px 60px rgba(78, 79, 114, 0.1); */
   box-shadow: 0px 16px 60px rgba(78, 79, 114, 0.08);
   position: relative;
 }
 
-.buttonText {
-  color: #4285f4;
-  font-weight: bolder;
-}
-
-.icon {
-  height: 25px;
-  width: 25px;
-  margin-right: 0px;
-  position: absolute;
-  left: 30px;
-  align-items: center;
+.heading {
+  color: azure;
+  font-weight: bold;
+  font-size: x-large;
+  font-family: Georgia, serif;
 }
 
 .logo {
-  width: 75px;
-  height: 75px;
+  width: 150px;
+  height: 150px;
 }
