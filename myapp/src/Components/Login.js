@@ -40,7 +40,7 @@ function Login (){
           onSuccess={onSuccess} 
           onFailure={onFailure}
           cookiePolicy={'single_host_origin'}
-          isSignedIn={true}
+          isSignedIn={true} 
         />
       </div>
       
@@ -49,12 +49,12 @@ function Login (){
     <GoogleLogout clientId={clientId} buttonText="Log out" onLogoutSuccess={logOut} />
 
   )}
-  <div className= 'LoggedInSucess'>
+  {onSuccess && !onFailure && <div className= 'LoggedInSucess'>
   <h2>User Logged On</h2>
           <p>Name: {profile.name}</p>
           <p>Email Address: {profile.email}</p>
           <br />
-  </div>
+  </div>}
   </div> 
     )
   }
