@@ -50,7 +50,7 @@ function Login (){
     <GoogleLogout clientId={clientId} buttonText="Log out" onLogoutSuccess={logOut} />
 
   )}
-  {onSuccess && !onFailure && <div className= 'LoggedInSucess'>
+  {window.value && <div className= 'LoggedInSucess'>
   <h2>User Logged On</h2>
           <p>Name: {profile.name}</p>
           <p>Email Address: {profile.email}</p>
