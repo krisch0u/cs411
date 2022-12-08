@@ -96,6 +96,7 @@ useEffect(() => {
       <h1>Restaurants and Wellness App</h1>
       </div>
       <Login/>
+      {window.value && <div className='LoggedIn'>
       <h2>Enter Your City</h2>
       <input 
             ref={inputRef}
@@ -126,8 +127,8 @@ useEffect(() => {
          <p key={index}>{x.food}
          </p>
        ))}
-      </div> 
-
+      </div>
+      </div>}
       <br />
       <img src={logo} alt="" className="logo" />
     </div>

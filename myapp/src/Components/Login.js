@@ -19,6 +19,7 @@ function Login (){
   });
   const onSuccess = (res) => {
       setProfile(res.profileObj);
+      window.value=true;
   };
 
   const onFailure = (err) => {
