@@ -23,8 +23,8 @@ function App () {
 
   //nutrition API
   const nutritionix = require("nutritionix-api");
-  const appId = '1fe9de8b';
-  const appkey = '8718096fbd6e7307d8fc8625f0857bab';
+  const appId = '';
+  const appkey = '';
   nutritionix.init(appId,appkey);
   nutritionix.natural.search('Apple').then(result =>{
     alert(result);
