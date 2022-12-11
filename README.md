@@ -6,6 +6,10 @@ are displayed to the user along with a picture of their top dish. The user can t
 a meal or components of a meal into another section in which an alert of nutrition 
 information such as serving size and calories appears.
 
+
+https://user-images.githubusercontent.com/114755382/206929094-ec19f0fc-61f6-44a4-837b-ff0d937ca60b.mp4
+
+
 Technology Stack:
 1. Third party authorization using OAuth is done with the Google Login.
 We used Google because we felt that it was a common plateform used and many people 
