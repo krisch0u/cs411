@@ -1,5 +1,5 @@
-As a logged in user I want to swipe (left for no, right for yes) in order to express disinterest/interest in a person.
+As a logged in user I want to know more about what I am eating.
 
-Once the user finishes creating a profile and selecting food interests, the user is able to view other users’ profiles where the user is able to either swipe right to show interest in a person or swipe left to show disinterest. The other user’s profile will show their food interests as well as a basic bio about themselves.
+Once the user selects their city and is shown the list of top rated restaurants, the user will also be shown the nutritional values of popular food selections at the restaurants allowing them to have a better understanding of what they are eating and taking in their body.
 
 
