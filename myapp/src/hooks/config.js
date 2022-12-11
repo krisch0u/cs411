@@ -7,4 +7,4 @@ export const API_BASE_URL2 = "://api.nutritionix.com/v1_1/search";
 // For simplicity and the sake of this tutorial, I'll just leave it here like this
 // But just bear in mind: NEVER EVER save a bearer token inside the frontend code
 // export const NUTRITIONIXTOKEN = '';
-export const BEARER_TOKEN = 'Bearer IGFbP6cS6VYCO2e4xf7W2dxZgkS4jKtgLnedJSHfgmphItLj1W7y5fiBBxeJqGY7l_kgzSkahLiasJltjMapaJdmpQRif1h51efP1jnzw04rgzdG80xdbFHggieSY3Yx';
+export const BEARER_TOKEN = 'Bearer ';
