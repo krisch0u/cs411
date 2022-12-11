@@ -1,5 +1,3 @@
-As a logged in user I want to select my food interest in order to find people who match me.
+As a logged in user I want to be able to save my location for future use.
 
-After the user creates a profile, the user should be able to choose their food interests from a list of available food options to choose from. Once their interests are set, other profiles are filtered so that profiles with more similar interests are shown first, followed by those with less similar interests.
-As a reach, add allergies and dislikes.
-
+After the user signs in, their location will be saved and so signing in again they will not need to reselect their location. The user will be able to see the top restaurants in the area and their corresponding nutritional values.
