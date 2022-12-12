@@ -1,6 +1,6 @@
 #CS411 Final Project
 
-Idea: Our aplication, we have called Foodies, allows users who login through Google
+Idea: Our application, we have called Foodies, allows users who login through Google
 to enter a city of their choice. Once their city is entered the top 5 rated restaurants 
 are displayed to the user along with a picture of their top dish. The user can then enter 
 a meal or components of a meal into another section in which an alert of nutrition 
