@@ -1,6 +1,6 @@
 #CS411 Final Project
 
-Idea: Our aaplication we have called Foodies allows users who login through Google
+Idea: Our aplication, we have called Foodies, allows users who login through Google
 to enter a city of their choice. Once their city is entered the top 5 rated restaurants 
 are displayed to the user along with a picture of their top dish. The user can then enter 
 a meal or components of a meal into another section in which an alert of nutrition 
@@ -23,5 +23,5 @@ whatever you like in the value.
 5. Frontend is configured using Node and React environments. We found these to be the 
 best for our application due to their relative compatibility with eachother and we preferred 
 to use JavaScript as our main language.
-6. Backend was configured using Python Flask environments. We found this was the best 
-environment to connect the frontend and backend smoothly for request and returning of data.  
+6. Backend was configured using a Python Flask environment. We found this was the best 
+environment to connect the frontend and backend smoothly for requesting and returning of data.  
